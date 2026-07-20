@@ -10,7 +10,8 @@
 <header class="topbar">
   <div class="brand">
     <div class="kicker">Etkileşimli Bilim Levhaları</div>
-    <h1>Galton <span>Tahtası</span></h1>
+    <h1>Galton <span>Tahtası</span>
+      <button class="info-btn" id="infoBtn" title="Bu levha nedir?">i</button></h1>
   </div>
   <nav class="plate-nav">
     <a class="plate-tab page-link" href="https://hakanatas.github.io/interactive-periodic-table/">
@@ -82,6 +83,31 @@
     Bu, <b>Merkezi Limit Teoremi</b>'dir: bağımsız rastgele adımların toplamı normal dağılıma yakınsar.
     Sağa sapma olasılığını (p) değiştir, tepe kayar; sıra sayısını (n) artır, eğri sivrilir.
   </p>
+</div>
+
+<div class="modal-backdrop" id="infoModal" hidden>
+  <div class="modal">
+    <button class="modal-close" id="infoClose" aria-label="Kapat">×</button>
+    <div class="modal-body">
+      <div class="modal-kicker">Levha V · Rehber</div>
+      <h2>Galton <span>Tahtası</span></h2>
+      <p>Çivilerle dolu bir tahtadan düşen toplar, her çivide rastgele sola ya da sağa sapar ve alttaki
+        kovalarda birikir. Tek bir topun yolu tahmin edilemez; ama binlerce top kendiliğinden bir
+        <b>çan eğrisi</b> çizer.</p>
+      <h3>Neler yapabilirsin</h3>
+      <ul>
+        <li>1, 50 ya da 500 top bırak; veya "sürekli akış" ile durmadan dök.</li>
+        <li><b>Sıra sayısı (n)</b> eğrinin sivriliğini belirler. <b>Sağa sapma olasılığı (p)</b> tepenin yerini kaydırır.</li>
+        <li><b>Teorik binom eğrisi</b> histogramın üstüne çizilir — deney ve teori birebir karşılaştırılır.</li>
+        <li>Canlı istatistikler: gözlenen ortalama/standart sapma ve teorik μ = n·p, σ = √(n·p·(1−p)).</li>
+      </ul>
+      <h3>Bilimsel arka plan</h3>
+      <p>Bu düzenek <b>Merkezi Limit Teoremi</b>'nin görsel kanıtıdır: çok sayıda bağımsız rastgele adımın
+        toplamı, tek tek adımlar ne olursa olsun, normal (çan) dağılımına yakınsar. Her topun kova numarası,
+        n yazı-tura atışında kaç kez "sağ" geldiğinin toplamıdır — yani bir binom dağılımı.</p>
+      <div class="modal-tip">💡 İpucu: p'yi 0,75 yap; tepe sağa kayar ve ortalama tam n·p değerine oturur.</div>
+    </div>
+  </div>
 </div>
 
 <script src="app.js"></script>
