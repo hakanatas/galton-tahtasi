@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galton Tahtası</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="kicker">Etkileşimli Bilim Levhaları</div>
+    <h1>Galton <span>Tahtası</span></h1>
+  </div>
+  <nav class="plate-nav">
+    <a class="plate-tab page-link" href="https://hakanatas.github.io/interactive-periodic-table/">
+      <span class="fig">Levha I</span>
+      <span class="lbl">Periyodik Tablo</span>
+    </a>
+    <a class="plate-tab page-link" href="https://hakanatas.github.io/interactive-periodic-table/nuclides.html">
+      <span class="fig">Levha II</span>
+      <span class="lbl">Nüklit Haritası</span>
+    </a>
+    <a class="plate-tab page-link" href="https://hakanatas.github.io/fourier-cizim-makinesi/">
+      <span class="fig">Levha III</span>
+      <span class="lbl">Fourier Makinesi</span>
+    </a>
+    <a class="plate-tab page-link" href="https://hakanatas.github.io/yorunge-kurucu/">
+      <span class="fig">Levha IV</span>
+      <span class="lbl">Yörünge Kurucu</span>
+    </a>
+    <a class="plate-tab active page-link" href="index.html">
+      <span class="fig">Levha V</span>
+      <span class="lbl">Galton Tahtası</span>
+    </a>
+  </nav>
+</header>
+
+<div class="board-wrap">
+  <div class="control-bar">
+    <div class="presets">
+      <button data-drop="1">1 top</button>
+      <button data-drop="50">50 top</button>
+      <button data-drop="500">500 top</button>
+      <button id="streamBtn">🌊 Sürekli akış</button>
+      <button id="resetBtn">↺ Sıfırla</button>
+    </div>
+    <label class="ctl">
+      <span>Sıra sayısı: <b id="rowVal">12</b></span>
+      <input id="rowSlider" type="range" min="4" max="18" step="1" value="12">
+    </label>
+    <label class="ctl">
+      <span>Sağa sapma p: <b id="probVal">0,50</b></span>
+      <input id="probSlider" type="range" min="10" max="90" step="1" value="50">
+    </label>
+    <label class="ctl">
+      <span>Hız: <b id="speedVal">×3</b></span>
+      <input id="speedSlider" type="range" min="1" max="8" step="1" value="3">
+    </label>
+    <label class="toggle"><input id="curveChk" type="checkbox" checked> Teorik eğri</label>
+  </div>
+
+  <div class="stats" id="stats">
+    <span class="stat"><span class="s-lbl">Toplam</span><b id="stTotal">0</b></span>
+    <span class="stat"><span class="s-lbl">Ortalama</span><b id="stMean">—</b></span>
+    <span class="stat"><span class="s-lbl">Std. sapma</span><b id="stSd">—</b></span>
+    <span class="stat"><span class="s-lbl">Teorik μ</span><b id="stMu">—</b></span>
+    <span class="stat"><span class="s-lbl">Teorik σ</span><b id="stSigma">—</b></span>
+  </div>
+
+  <div class="board" id="board">
+    <canvas id="canvas"></canvas>
+  </div>
+  <div class="plate-caption">Levha V — Binom Dağılımı · Galton, 1889</div>
+  <p class="explain">
+    Her top, çarptığı <b>her çivide</b> yazı-tura atar gibi sola veya sağa sapar. Tek bir topun yolu
+    rastlantısaldır — ama binlerce top biriktiğinde kovalar kendiliğinden bir <b>çan eğrisi</b> çizer.
+    Bu, <b>Merkezi Limit Teoremi</b>'dir: bağımsız rastgele adımların toplamı normal dağılıma yakınsar.
+    Sağa sapma olasılığını (p) değiştir, tepe kayar; sıra sayısını (n) artır, eğri sivrilir.
+  </p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
